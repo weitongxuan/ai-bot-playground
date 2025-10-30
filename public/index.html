@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 客服系統</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>AI 客服助手</h1>
+            <p class="status">在線中</p>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <div class="message-content">
+                    <p>您好！我是 AI 客服助手，有什麼可以幫助您的嗎？</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-input-container">
+            <form id="chatForm">
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="輸入您的問題..."
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" id="sendButton">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </form>
+            <button id="clearButton" class="clear-button">清除對話</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
