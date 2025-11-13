@@ -182,7 +182,7 @@ app.post('/api/chat', async (req, res) => {
     // 構建最新的系統訊息
     const currentSystemMessage = {
       role: 'system',
-      content: adminPrompt + "\nuser data: " + userData + '\n'
+      content: adminPrompt + "\n調用update_user_data以儲存使用者資料\nuser data: " + userData + '\n'
     };
 
     // 移除舊的系統訊息（如果存在）
@@ -240,6 +240,7 @@ app.post('/api/chat', async (req, res) => {
     if (toolCalls && toolCalls.length > 0) {
       for (const call of toolCalls) {
         if (call.function.name === 'update_user_data') {
+          
           const args = JSON.parse(call.function.arguments);
  
           updateContent(args.data);
