@@ -7,37 +7,64 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="chat-container">
-        <div class="chat-header">
-            <h1>AI 客服助手</h1>
-            <p class="status">在線中</p>
-        </div>
-
-        <div class="chat-messages" id="chatMessages">
-            <div class="message bot-message">
-                <div class="message-content">
-                    <p>您好！我是 AI 客服助手，有什麼可以幫助您的嗎？</p>
-                </div>
+    <div class="main-container">
+        <div class="user-data-panel">
+            <div class="user-data-header">
+                <h2>使用者資料</h2>
+            </div>
+            <div class="user-data-content">
+                <textarea id="userDataTextarea" placeholder="載入中..."></textarea>
+                <button id="saveUserDataButton" class="save-button">儲存資料</button>
+                <div id="userDataStatus" class="save-status"></div>
             </div>
         </div>
 
-        <div class="chat-input-container">
-            <form id="chatForm">
-                <input
-                    type="text"
-                    id="messageInput"
-                    placeholder="輸入您的問題..."
-                    autocomplete="off"
-                    required
-                >
-                <button type="submit" id="sendButton">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="22" y1="2" x2="11" y2="13"></line>
-                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                    </svg>
-                </button>
-            </form>
-            <button id="clearButton" class="clear-button">清除對話</button>
+        <div class="chat-container">
+            <div class="chat-header">
+                <h1>AI 客服助手</h1>
+                <p class="status">在線中</p>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>您好！我是 AI 客服助手，有什麼可以幫助您的嗎？</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="quick-actions">
+                    <!-- 快捷按鈕會由 JavaScript 動態生成 -->
+                </div>
+                <form id="chatForm">
+                    <input
+                        type="text"
+                        id="messageInput"
+                        placeholder="輸入您的問題..."
+                        autocomplete="off"
+                        required
+                    >
+                    <button type="submit" id="sendButton">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </form>
+                <button id="clearButton" class="clear-button">清除對話</button>
+            </div>
+        </div>
+
+        <div class="admin-panel">
+            <div class="admin-header">
+                <h2>系統提示詞設定</h2>
+            </div>
+            <div class="admin-content">
+                <textarea id="adminPromptTextarea" placeholder="載入中..."></textarea>
+                <button id="savePromptButton" class="save-button">儲存提示詞</button>
+                <div id="saveStatus" class="save-status"></div>
+            </div>
         </div>
     </div>
 
